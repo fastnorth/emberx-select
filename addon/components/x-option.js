@@ -58,6 +58,9 @@ export default Ember.Component.extend({
 
   registerWithXSelect() {
     var select = this.nearestOfType(XSelectComponent);
+    if (!select) {
+      return;
+    }
     Ember.assert("x-option component declared without enclosing x-select", !!select);
     this.set('select', select);
     select.registerOption(this);

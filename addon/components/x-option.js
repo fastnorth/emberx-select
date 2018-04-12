@@ -58,6 +58,9 @@ export default Ember.Component.extend({
 
   registerWithXSelect() {
     var select = this.nearestOfType(XSelectComponent);
+    if (!select) {
+      return;
+    }
     Ember.assert("x-option component declared without enclosing x-select", !!select);
     this.set('select', select);
     select.registerOption(this);
@@ -70,6 +73,10 @@ export default Ember.Component.extend({
    */
   willDestroyElement: function() {
     this._super.apply(this, arguments);
-    this.get('select').unregisterOption(this);
+    const parentSelect = this.get('select');
+    if (!parentSelect) {
+      return;
+    }
+    parentSelect.unregisterOption(this);
   }
 });

@@ -1,6 +1,6 @@
 {
-  "name": "emberx-select",
-  "version": "2.0.1",
+  "name": "@race-roster/emberx-select",
+  "version": "2.0.2",
   "description": "A Select component based on html select.",
   "directories": {
     "doc": "doc",
@@ -11,7 +11,7 @@
     "start": "ember server",
     "test": "ember try:testall"
   },
-  "repository": "https://github.com/thefrontside/emberx-select",
+  "repository": "https://github.com/fastnorth/emberx-select",
   "engines": {
     "node": ">= 0.10.0"
   },
@@ -46,5 +46,8 @@
   "ember-addon": {
     "demoURL": "https://thefrontside.github.io/emberx-select",
     "configPath": "tests/dummy/config"
+  },
+  "publishConfig": {
+    "registry": "https://npm.rostrr.com"
   }
 }
